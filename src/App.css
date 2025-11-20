@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import "tailwindcss";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,38 +8,34 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@theme {
+  --font-display: "Oswald", sans-serif;
+  --font-oswald: "Oswald", sans-serif; 
+  --drop-shadow-4xl: 0 35px 35px rgba(0, 0, 0, 0.25); 
+
+  --text-tiny: 0.625rem; 
+
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  --animate-mywiggle: mywiggle 2s ease-in-out infinite;
+  @keyframes mywiggle {
+    0%,
+    100% {
+      transform: rotate(-18deg);
+      /* transform-origin: top right ; */
+    }
+    50% {
+      transform: rotate(18deg);
+    }
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
